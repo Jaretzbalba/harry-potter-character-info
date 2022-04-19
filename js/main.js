@@ -1,5 +1,5 @@
 
-document.querySelector('button').addEventListener('click', getFetch)
+document.getElementById('wand-button').addEventListener('click', getFetch)
 
 function getFetch(){
 
@@ -10,6 +10,7 @@ function getFetch(){
   fetch(url)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
+        console.log(data)
         console.log(data.find(char => char.name === `${name}`))
         
         charArray = data.find(char => char.name === `${name}`)
